@@ -1,0 +1,17 @@
+.index {
+    border: 2px solid red;
+    border-radius: 5px;
+}
+
+h2 ~ h3{
+    background-color: #fa8787;
+}
+
+body{
+    background-color: rgb(211, 211, 211);
+    color: blue;
+}
+
+h1 {
+    color: green;
+}
