@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Practica 1</title>
+</head>
+
+<body onload="comenzarTiempo()">
+
+    <h2 id="h2">Responde las siguientes preguntas</h2>
+    <h2 id="Tiempo">00:30</h2>
+    <br>
+    <h3>¿1.Cual es la capital de Francia?</h3><br>
+    <input type="text" id="Respuesta1"><br>
+
+    <h3>¿2.(7*2) + 15?</h3><br>
+    <input type="text" id="Respuesta2"><br>
+
+    <h3>3.¿Simbolo quimico del agua?</h3>
+    <input type="text" id="Respuesta3"><br>
+
+    <h3>4.¿Año en el que conocieron a America?</h3>
+    <input type="text" id="Respuesta4"><br>
+
+    <h3>5.¿Nombre de las Capitales de Costa Rica?</h3>
+    <input type="text" id="Respuesta5"><br>
+
+    <button onclick="mostrarRespuestas()">Termine</button><br><br>
+    <button onclick="location.reload()">Intentar de nuevo</button>
+
+    <script>
+        let tiempoRestante = 30;
+        let elementoSonidoAlarma = document.getElementById("SonidoAlarma");
+        let elementoTiempo = document.getElementById("Tiempo");
+        let intervalo;
+
+        function mostrarRespuestas() {
+            clearInterval(qintervalo)
+            let respuestas = [
+                document.getElementById("Respuesta1").value,
+                document.getElementById("Respuesta2").value,
+                document.getElementById("Respuesta3").value,
+                document.getElementById("Respuesta4").value,
+                document.getElementById("Respuesta5").value
+            ];
+
+            let fechaActual = new Date();
+            alert(
+                "La fecha de hoy es " +
+                fechaActual.toLocaleDateString('es-ES') +
+                " y tus respuestas son:\n" +
+                respuestas.join("\n")
+            );
+        }
+
+        function comenzarTiempo() {
+            intervalo = setInterval(function () {
+                tiempoRestante--;
+                let minutos = Math.floor(tiempoRestante / 60).toString().padStart(2, "0");
+                let segundos = (tiempoRestante % 60).toString().padStart(2, "0");
+                elementoTiempo.textContent = minutos + ":" + segundos;
+
+                tiempoRestant <= 0 && (clearInteral(intervalo), elemenoSonidoAlarma.play(), alert("¡Game Over!"));
+            }, 1000);
+        }
+    </script>
+
+</body>
+
+</html>

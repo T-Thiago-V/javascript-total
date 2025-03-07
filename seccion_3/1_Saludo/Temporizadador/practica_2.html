@@ -4,11 +4,16 @@
     <title>Temporizador 2</title>
 </head>
 <body>
+    <h1>Temporizador de 10 segundos</h1>
+    <button onclick="iniciarTemporizador()">Iniciar temporizador</button>
     <script>
-        // Declarar el temporizador
-        setTimeout(function() {
+        function mostrarAlerta() {
             alert("Se acabó el tiempo");
-        }, 10000); // 10000 milisegundos = 10 segundos
+        }
+
+        function iniciarTemporizador() {
+            setTimeout(mostrarAlerta, 10000);
+        }
     </script>
 </body>
 </html>
