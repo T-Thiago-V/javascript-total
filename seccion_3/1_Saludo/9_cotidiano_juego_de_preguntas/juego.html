@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Practica 1</title>
+    <audio id="SonidoAlarma">
+        <source src="./audio/pacman-die.mp3" type="audio/mpeg">
+    </audio>
 </head>
 
 <body onload="comenzarTiempo()">
 
-    <h2 id="h2">Responde las siguientes preguntas</h2>
-    <h2 id="Tiempo">00:30</h2>
+    <h1 id="h2">Responde las siguientes preguntas</h1>
+    <h1 id="Tiempo">00:30</h1>
     <br>
     <h3>¿1.Cual es la capital de Francia?</h3><br>
     <input type="text" id="Respuesta1"><br>
@@ -27,7 +30,6 @@
 
     <h3>5.¿Nombre de las Capitales de Costa Rica?</h3>
     <input type="text" id="Respuesta5"><br>
-
     <button onclick="mostrarRespuestas()">Termine</button><br><br>
     <button onclick="location.reload()">Intentar de nuevo</button>
 
@@ -38,7 +40,7 @@
         let intervalo;
 
         function mostrarRespuestas() {
-            clearInterval(qintervalo)
+            clearInterval(intervalo);
             let respuestas = [
                 document.getElementById("Respuesta1").value,
                 document.getElementById("Respuesta2").value,
@@ -63,7 +65,7 @@
                 let segundos = (tiempoRestante % 60).toString().padStart(2, "0");
                 elementoTiempo.textContent = minutos + ":" + segundos;
 
-                tiempoRestant <= 0 && (clearInteral(intervalo), elemenoSonidoAlarma.play(), alert("¡Game Over!"));
+                tiempoRestante <= 0 && (clearInterval(intervalo), elementoSonidoAlarma.play(), alert("¡Game Over!"));
             }, 1000);
         }
     </script>
