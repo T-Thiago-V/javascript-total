@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotidiano boletin</title>
+</head>
+
+<body>
+    <img src="" alt="">
+    <h1>Bienvenido a tu boletin estudiantil</h1>
+    <h2>Alumno:Bruce Wayne</h2>
+    <h3>Notas:</h3>
+    <ol>
+        <li>7</li>
+        <li>4</li>
+        <li>8</li>
+        <li>9</li>
+        <li>6</li>
+    </ol>
+    <h3>Promedio:</h3>
+    <div id="resultado:"></div>
+    <button onclick="Promedio()">Calcular Promedio</button>
+    <h3>Nota más alta</h3>
+    <div id="Notas"></div>
+    <button onclick="Nota">Buscar nota más alta</button>
+    <h3>¿Hubo algun plazo?</h3>
+    <button onclick="Plazo">Consultar aplazo</button>
+    <script>
+        function Promedio() {
+            let array = [7, 4, 8, 9, 6];
+            let promedio = 0;
+            for (let Array of array) {
+                promedio += parseInt(Array);
+            }
+            let Promedio = parseFloat(promedio / array.length);
+            document.getElementById("resultado:").textContent = Promedio;
+        }
+
+
+        function Nota() {
+            let numero = 9;
+            let Nota = [7, 4, 8, 6];
+            if (Nota >= numero) {
+                document.getElementById("Nota más alta" + Nota).textContent;
+            } else {
+                document.getElementById("Nota más alta " + Nota).textContent;
+            }
+        }
+    </script>
+</body>
+
+</html>
