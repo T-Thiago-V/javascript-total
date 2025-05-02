@@ -1,0 +1,17 @@
+body {
+    background: #283c86;
+background: -webkit-linear-gradient(to right, #45a247, #283c86); 
+background: linear-gradient(to right, #45a247, #283c86); 
+
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+button{
+    background-color: #434343;
+    padding: 10px 40px;
+    border-radius: 60px;
+    color: aliceblue;
+}
