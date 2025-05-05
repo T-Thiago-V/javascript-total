@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let Automovil1 = new Object();
+
+        Automovil1.marca = 'Chevrolet';
+        Automovil1['modelo'] = 'Prisma';
+        Automovil1['anio'] = '2022';
+        Automovil1.encender = function () {
+            alert("Arranque");
+        };
+
+        let coche1 = Object.create({ nombre: 'Fee fire' });
+    </script>
+</body>
+
+</html>
