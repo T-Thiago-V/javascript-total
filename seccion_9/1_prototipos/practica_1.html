@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let auto = { marca: 'mercedes', modelo: 'Amg' };
+
+        function prototipos() {
+            let auto1 = Object.create(auto)
+            console.log(Object.getPrototypeOf(auto1.marca));
+        }
+        prototipos();   
+    </script>
+</body>
+
+</html>
