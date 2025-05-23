@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Colegio {
+            constructor(Estudiantes, Profesores, Reglas) {
+                this.Estudiantes = Estudiantes;
+                this.Profesores = Profesores;
+                this._Reglas = Reglas;
+            }
+            get Reglas() {
+                return this._Reglas;
+            }
+            set Reglas(nuevasReglas) {
+                this._Reglas = nuevasReglas;
+            }
+        }
+        let Colegio1 = new Colegio(700, 40, 35);
+        console.log(Colegio1);
+    </script>
+</body>
+
+</html>
