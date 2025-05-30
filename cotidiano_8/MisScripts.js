@@ -70,3 +70,13 @@ document.getElementById("listaAnimales")
 
 let array1 = [perro1, gato1, conejo1];
 
+function mostrarAnimales() {
+    const lista = document.getElementById("listaAnimales");
+    lista.innerHTML = "";
+
+    for (let h = 0; h < array1.length; h++) {
+        let li = document.createElement("li");
+        li.textContent = array1[h].informacion();
+        lista.appendChild(li);
+    }
+}
