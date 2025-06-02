@@ -6,6 +6,11 @@
     <!-- Este div mostrará el nombre obtenido desde el archivo JSON -->
     <div id="nombre"></div>
     <div id="edad"></div>
+    <div id="esEstudiante"></div>
+    <div id="direccion"></div>
+    <div id="calle"></div>
+    <div id="ciudad"></div>
+    <div id="telefonos"></div>
 
     <script>
         let datosJson; // Se declara una variable para almacenar los datos del archivo JSON
@@ -28,10 +33,18 @@
 
                 // Se obtiene el elemento HTML con id "nombre"
                 let elementoNombre = document.getElementById("nombre");
-
+                let elementoEdad = document.getElementById("edad")
+                let elementoesEstudiante = document.getElementById("esEstudiante")
+                let elementoCalle = document.getElementById("calle")
+                let elementoCiudad = document.getElementById("ciudad")
+                let elementoTelefonos = document.getElementById("telefonos")
                 // Se actualiza el contenido del elemento con el nombre obtenido del JSON
                 elementoNombre.textContent = datosJson.nombre;
-
+                elementoEdad.textContent = datosJson.edad;
+                elementoesEstudiante.textContent = datosJson.esEstudiante;
+                elementoCalle.textContent = datosJson.direccion.calle;
+                elementoCiudad.textContent = datosJson.direccion.ciudad;
+                elementoTelefonos.textContent = datosJson.telefonos;
             } else {
                 // En caso de error, se puede mostrar un mensaje o ejecutar otra acción
                 // console.error("No se pudo cargar el archivo JSON");
