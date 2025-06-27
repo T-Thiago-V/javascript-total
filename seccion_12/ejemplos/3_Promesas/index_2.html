@@ -9,18 +9,23 @@
 
 <body>
     <script>
+        // Creamos la primera promesa que se resuelve después de 2 segundos con el valor "Hola"
         let promesa1 = new Promise(function (resolve, reject) {
             setTimeout(resolve, 2000, "Hola");
         });
 
+        // Creamos la segunda promesa que se resuelve después de 6 segundos con el valor "Mundo"
         let promesa2 = new Promise(function (resolve, reject) {
             setTimeout(resolve, 6000, "Mundo");
         });
 
+        // Usamos Promise.all para esperar a que ambas promesas se resuelvan
         Promise.all([promesa1, promesa2]).then(function (resultados) {
-            console.log(resultados);
+            // Cuando ambas promesas se resuelven, imprimimos el arreglo de resultados
+            console.log(resultados); // ["Hola", "Mundo"]
         });
 
+        // Este mensaje se imprime inmediatamente, antes de que las promesas se resuelvan
         console.log("El codigo sigue su camino")
     </script>
 </body>

@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
- 
+
 <body>
     <script>
+        // Definimos una función que obtiene usuarios desde una API y devuelve una promesa
         function obtenerUsuarios() {
             return new Promise(function (resolve, reject) {
+                // Creamos un nuevo objeto XMLHttpRequest para hacer la petición HTTP
                 let xhr = new XMLHttpRequest();
+                // Configuramos la petición para usar el método GET y la URL de la API
                 xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+                // Definimos lo que sucede cuando la petición se completa
                 xhr.onload = function () {
+                    // Si el estado HTTP es 200 (éxito), resolvemos la promesa con la respuesta parseada a JSON
                     if (xhr.status === 200) {
                         resolve(JSON.parse(xhr.responseText));
                     } else {
+                        // Si ocurre un error, rechazamos la promesa con el texto del estado
                         reject(xhr.statusText);
                     }
                 }
+                // Enviamos la petición al servidor
                 xhr.send();
             });
         }
- 
+
+        // Llamamos a la función que devuelve la promesa
         obtenerUsuarios()
+            // Si la promesa se resuelve correctamente, mostramos los usuarios en la consola
             .then(function (usuarios) {
                 console.log(usuarios);
             })
+            // Si ocurre un error, mostramos el error en la consola
             .catch(function (error) {
                 console.log(error);
             })
     </script>
 </body>
- 
+
 </html>
